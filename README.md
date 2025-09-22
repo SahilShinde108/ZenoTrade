@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/22475870/README.md)
 # 🚀 ZenoTrade - Next-Gen Trading Platform
 
 <div align="center">
