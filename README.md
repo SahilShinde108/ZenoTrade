@@ -1,21 +1,32 @@
-# 🚀 ZenoTrade - Next-Gen Trading Platform
+# 🚀 ZenoTrade - Stock Trading Platform
 
 <div align="center">
   <img src="frontend/public/media/images/logo1.png" alt="ZenoTrade Logo" width="300" height="auto" />
   
   <br/>
 
-  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) &nbsp;&nbsp;&nbsp;[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) &nbsp;&nbsp;  [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![Material UI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
+  ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+  ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+  ![React Toastify](https://img.shields.io/badge/React_Toastify-FACC15?style=for-the-badge&logo=react&logoColor=white)
+
+  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+  ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  ![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)
+  ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
   
   <br/>
   
-  <h3>
-    <a href="https://zenotrade.onrender.com">Live Demo</a> | 
-    <a href="https://zenotrade-dashboard-o8ih.onrender.com">Dashboard</a> | 
-    <a href="https://zenotrade-backend-rjkp.onrender.com">Backend API</a>
-  </h3>
 
-  <p><strong>Demo Credentials:</strong> <code>demo1@gmail.com</code> / <code>demo1@123</code></p>
+  <a href="https://zenotrade.onrender.com" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-Visit_Now-2ea44f?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo" />
+  </a>
+
+  <br/>
+
+  <p><strong>Demo Credentials:</strong> <code>sam@gmail.com</code> / <code>sam@1234</code></p>
 
   *Your Gateway to Smart Trading*
 </div>
@@ -43,7 +54,18 @@ ZenoTrade is a modern, full-stack trading platform designed for speed, security,
               └──────────────┘
 ```
 
-## 📱 Frontend (`/frontend`)
+## � App Screenshots
+
+<div align="center">
+  <img src="screenshot/image1.png" alt="Dashboard View" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  <p>Dashboard View</p>
+  <img src="screenshot/image2.png" alt="Trading Interface" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  <p>Trading Interface</p>
+  <img src="screenshot/image3.png" alt="Portfolio Analysis" width="800" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  <p>Portfolio Analysis</p>
+</div>
+
+## �📱 Frontend (`/frontend`)
 
 The public-facing application featuring:
 
@@ -132,22 +154,6 @@ npm install
 npm start
 # Access at http://localhost:3001
 ```
-
-## 🔧 Core Technologies
-
-### Frontend & Dashboard
-- **React.js**: UI Components
-- **Material UI**: Icons and Design Elements
-- **Context API**: State Management (`GeneralContext`)
-- **Chart.js**: Data Visualization (Doughnut, Vertical Graphs)
-- **Axios**: API Requests
-- **React Toastify**: Notifications
-
-### Backend
-- **Node.js & Express.js**: Server Runtime
-- **MongoDB & Mongoose**: Database
-- **JWT**: Authentication
-- **Cookie Parser**: Session handling
 
 ## 📦 Project Structure
 
