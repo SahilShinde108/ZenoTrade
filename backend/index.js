@@ -19,7 +19,12 @@ const { OrdersModel } = require("./model/OrdersModel");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000", 
+      "http://localhost:3001",
+      "https://zenotrade.onrender.com",
+      "https://zenotrade-dashboard-o8ih.onrender.com"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
