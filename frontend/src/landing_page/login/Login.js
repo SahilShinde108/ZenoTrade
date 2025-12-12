@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_URL from "../../api.js";
 
 function Login() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ function Login() {
     setSubmitting(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        `${API_URL}/login`,
         {
           ...formData,
         },
@@ -48,8 +49,21 @@ function Login() {
       );
       if (data.success) {
         toast.success(data.message);
+        // Store user info
+        localStorage.setItem("username", data.user.username);
+        localStorage.setItem("email", data.user.email);
         // Redirect to Dashboard
-        window.location.href = "http://localhost:3001";
+        setTimeout(() => {
+          const isLocal =
+            window.location.hostname === "localhost" ||
+            window.location.hostname === "127.0.0.1";
+
+          const dashboardUrl = isLocal
+            ? "http://localhost:3001"
+            : "https://zenotrade-dashboard-o8ih.onrender.com";
+          window.location.href = `${dashboardUrl}`;
+        }, 500);
+        // window.location.href = "http://localhost:3001";
       } else {
         toast.error(data.message);
       }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_URL from "../../api.js";
 
 function Signup() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function Signup() {
     setSubmitting(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/signup",
+        `${API_URL}/signup`,
         {
           ...formData, // formData already contains username now
         },
@@ -58,7 +59,17 @@ function Signup() {
       );
       if (data.success) {
         toast.success(data.message);
-        window.location.href = "http://localhost:3001";
+        localStorage.setItem("username", formData.username);
+        localStorage.setItem("email", formData.email);setTimeout(() => {
+          const isLocal =
+            window.location.hostname === "localhost" ||
+            window.location.hostname === "127.0.0.1";
+
+          const dashboardUrl = isLocal
+            ? "http://localhost:3001"
+            : "https://zenotrade-dashboard-o8ih.onrender.com";
+          window.location.href = `${dashboardUrl}`;
+        }, 500);
       } else {
         toast.error(data.message);
       }
