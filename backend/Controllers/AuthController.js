@@ -55,6 +55,16 @@ module.exports.Login = async (req, res, next) => {
   }
 };
 
+
+module.exports.Logout = (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+  res.status(200).json({ message: "User logged out successfully", success: true });
+};
+
 module.exports.userVerification = (req, res) => {
   const token = req.cookies.token;
   if (!token) {
