@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import AppsIcon from "@mui/icons-material/Apps";
@@ -109,9 +108,9 @@ const Menu = () => {
         <Link to="/profile" style={{ textDecoration: "none" }}>
           <div className="profile" onClick={handleProfileClick}>
             <div className="avatar">
-              {user ? user.username[0].toUpperCase() : "U"}
+              {user?.username ? user.username[0].toUpperCase() : "U"}
             </div>
-            <p className="username">{user ? user.username : "User"}</p>
+            <p className="username">{user?.displayName || user?.username || "User"}</p>
           </div>
         </Link>
         <div className="theme-toggle" onClick={toggleTheme} style={{ cursor: "pointer", marginLeft: "20px", display: "flex", alignItems: "center" }}>
