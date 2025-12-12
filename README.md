@@ -1,16 +1,28 @@
 # 🚀 ZenoTrade - Next-Gen Trading Platform
 
 <div align="center">
-  <img src="frontend\public\media\images\logo1.png" alt="StockTrader Pro Logo" width="300" height="auto" />
+  <img src="frontend/public/media/images/logo1.png" alt="ZenoTrade Logo" width="300" height="auto" />
   
+  <br/>
+
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) &nbsp;&nbsp;&nbsp;[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) &nbsp;&nbsp;  [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
   
+  <br/>
+  
+  <h3>
+    <a href="https://zenotrade.onrender.com">Live Demo</a> | 
+    <a href="https://zenotrade-dashboard-o8ih.onrender.com">Dashboard</a> | 
+    <a href="https://zenotrade-backend-rjkp.onrender.com">Backend API</a>
+  </h3>
+
+  <p><strong>Demo Credentials:</strong> <code>demo1@gmail.com</code> / <code>demo1@123</code></p>
+
   *Your Gateway to Smart Trading*
 </div>
 
 ## 🌟 Project Overview
 
-StockTrader Pro is a modern, full-stack trading platform with three powerful components:
+ZenoTrade is a modern, full-stack trading platform designed for speed, security, and usability. It features a robust backend, a dynamic dashboard for real-time portfolio management, and a seamless user experience.
 
 ```
 ┌───────────────┐           ┌──────────────┐
@@ -37,55 +49,43 @@ The public-facing application featuring:
 
 - **Landing Page Components**
   - Responsive Navigation Bar
-  - Dynamic Home Page
-  - About Section
-  - Products Showcase
-  - Pricing Plans
-  - Support Center
+  - Dynamic Home Page with Feature Showcases
+  - Pricing Plans & Support Center
   
 - **User Management**
-  - Login System
-  - Signup Flow
-  - Account Opening Process
-  - User Authentication
+  - **Secure Authentication**: Login/Signup with robust error handling.
+  - **Redirection**: Intelligent routing based on authentication state.
 
 ## 📊 Dashboard (`/dashboard`)
 
-The trader's command center with:
+The trader's command center, recently enhanced with Phase 2 features:
 
 - **Core Trading Features**
-  - Buy/Sell Action Windows
-  - Real-time Position Tracking
-  - Holdings Management
-  - Order History
+  - **Buy/Sell Action Windows**: Execute trades instantly.
+  - **Real-time Position Tracking**: Monitor your active positions.
+  - **Holdings Management**: View your long-term investments.
+  - **Order History**: Comprehensive log of all your trades.
   
-- **Analytics & Monitoring**
-  - Doughnut Graph for Portfolio Distribution
-  - Vertical Graph for Performance Analysis
-  - WatchList for Market Monitoring
-  - Fund Management Interface
-
-- **User Experience**
-  - Intuitive Menu Navigation
-  - Top Bar with Quick Actions
-  - Summary Dashboard
-  - Responsive Layout
+- **Analytics & Customization**
+  - **Dynamic Summary**: Real-time calculation of Total Investment, Current Value, and P&L.
+  - **Portfolio Analytics**: Interactive Doughnut chart visualizing portfolio distribution.
+  - **Dark Mode**: Fully implemented toggleable dark/light theme for comfortable viewing.
+  - **User Profile**: Dedicated profile page with user details and logout functionality.
+  - **Notifications**: Real-time trade alerts using `react-toastify`.
 
 ## ⚙️ Backend (`/backend`)
 
 Robust server infrastructure featuring:
 
-- **Data Models**
-  - Holdings Management
-  - Orders Processing
-  - Positions Tracking
-  - User Authentication
-  
-- **Schema Definitions**
-  - Holdings Schema
-  - Orders Schema
-  - Positions Schema
-  - User Schema
+- **Security**
+  - **HttpOnly Cookies**: Secure session management.
+  - **CORS Configuration**: Properly configured for production (Render) and local development.
+  - **Password Hashing**: BCrypt encryption for user data.
+
+- **API Endpoints**
+  - `/user`: Securely fetch user profiles.
+  - `/allHoldings`, `/allOrders`: Fetch trading data.
+  - `/signup`, `/login`, `/logout`: Authentication routes.
 
 ## 🚀 Quick Start
 
@@ -110,8 +110,8 @@ cd backend
 npm install
 
 # Create .env file with:
-PORT=5000
-MONGODB_URI=your_mongodb_uri
+PORT=3002
+MONGO_URL=your_mongodb_uri
 JWT_SECRET=your_secret
 
 npm start
@@ -136,17 +136,18 @@ npm start
 ## 🔧 Core Technologies
 
 ### Frontend & Dashboard
-- React.js for UI Components
-- Context API for State Management
-- Chart.js for Data Visualization
-- CSS for Modern Styling
+- **React.js**: UI Components
+- **Material UI**: Icons and Design Elements
+- **Context API**: State Management (`GeneralContext`)
+- **Chart.js**: Data Visualization (Doughnut, Vertical Graphs)
+- **Axios**: API Requests
+- **React Toastify**: Notifications
 
 ### Backend
-- Node.js Runtime
-- Express.js Framework
-- MongoDB Database
-- Mongoose ODM
-- JWT Authentication
+- **Node.js & Express.js**: Server Runtime
+- **MongoDB & Mongoose**: Database
+- **JWT**: Authentication
+- **Cookie Parser**: Session handling
 
 ## 📦 Project Structure
 
@@ -155,47 +156,27 @@ stock-trading-platform/
 ├── frontend/                 # Public website
 │   ├── src/
 │   │   ├── landing_page/    # Landing page components
-│   │   └── test/            # Frontend tests
 │   └── public/              # Static assets
 │
 ├── dashboard/               # Trading interface
 │   ├── src/
-│   │   ├── components/      # Trading components
-│   │   └── data/           # Data management
+│   │   ├── components/      # Trading components (Menu, Summary, Profile)
+│   │   ├── GeneralContext.js # Global State
 │   └── public/             # Dashboard assets
 │
 └── backend/                # Server
-    ├── model/             # Data models
-    ├── schemas/           # Database schemas
-    └── index.js          # Entry point
+    ├── Controllers/        # Logic (Auth, Requests)
+    ├── Routes/             # API Routes
+    ├── schemas/            # Database schemas
+    └── index.js            # Entry point
 ```
 
 ## 🔐 Security Features
 
-- JWT-based Authentication
-- Secure Password Hashing
-- Protected API Endpoints
-- Input Validation
-- Session Management
-
-## 🛠️ Development Scripts
-
-```bash
-# Start development servers
-npm run dev      # Run all services
-npm run frontend # Run frontend only
-npm run dashboard # Run dashboard only
-npm run backend  # Run backend only
-
-# Testing
-npm test        # Run all tests
-npm run test:frontend   # Frontend tests
-npm run test:dashboard  # Dashboard tests
-npm run test:backend    # Backend tests
-
-# Build for production
-npm run build   # Build all components
-```
+- **JWT-based Authentication**: Secure, stateless auth.
+- **HttpOnly Cookies**: Prevents XSS attacks on tokens.
+- **Secure & SameSite Cookies**: Configured for cross-site usage in production.
+- **Protected API Endpoints**: Middleware verification for sensitive data.
 
 ## 🤝 Contributing
 
