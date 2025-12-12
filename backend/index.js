@@ -11,12 +11,23 @@ const URL = process.env.MONGO_URL;
 
 const app = express();
 
+const cookieParser = require("cookie-parser");
+const authRoute = require("./Routes/AuthRoute");
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://localhost:3001"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+app.use(cookieParser());
 app.use(bodyParser.json());
+
+app.use("/", authRoute);
 
 // Holdings
 app.get("/allHoldings", async (req, res) => {
