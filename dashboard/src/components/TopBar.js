@@ -6,6 +6,9 @@ const TopBar = () => {
   return (
     <div className="topbar-container">
       <div className="indices-container">
+        <div>
+          <img src="/logo1.png" style={{ width: "8rem" }} alt="" />
+        </div>
         <div className="nifty">
           <p className="index">NIFTY 50</p>
           <p className="index-points">{100.2} </p>
