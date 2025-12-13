@@ -9,7 +9,6 @@ function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    remember: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -63,7 +62,6 @@ function Login() {
             : "https://zenotrade-dashboard-o8ih.onrender.com";
           window.location.href = `${dashboardUrl}`;
         }, 500);
-        // window.location.href = "http://localhost:3001";
       } else {
         toast.error(data.message);
       }
@@ -151,30 +149,12 @@ function Login() {
           {errors.password && <div style={styles.error}>{errors.password}</div>}
         </div>
 
-        <div style={{ ...styles.field, ...styles.checkboxRow }}>
-          <input
-            id="remember"
-            name="remember"
-            type="checkbox"
-            checked={formData.remember}
-            onChange={handleChange}
-          />
-          <label htmlFor="remember" style={{ margin: 0 }}>
-            Remember me
-          </label>
-        </div>
-
         <button type="submit" style={styles.button} disabled={submitting}>
           {submitting ? "Logging in…" : "Log in"}
         </button>
       </form>
 
-      <p style={{ marginTop: 16, ...styles.muted }}>
-        Forgot your password?{" "}
-        <Link to="/forgot-password" style={styles.link}>
-          Reset it
-        </Link>
-      </p>
+      <br/>
       <p style={{ marginTop: 4, ...styles.muted }}>
         New here?{" "}
         <Link to="/signup" style={styles.link}>
